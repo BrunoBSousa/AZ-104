@@ -19,7 +19,7 @@ Public IP adresses will need to be explicited assigned in the creation of the re
 
 Azure gives you the ability to bring your own Public IP's address space into Azure, you will need to validate that you own thta pulic IP, via a plentora of methods.
 
-![Subnet](/Notes/Images/Peering.svg)<br>
+![Subnet](/Notes/Images/Peering1.svg)<br>
 
 
 
