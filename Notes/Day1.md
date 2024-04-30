@@ -22,7 +22,7 @@ Azure gives you the ability to bring your own Public IP's address space into Azu
 
 As we talked above a ***Vnet*** can only live in one region, but if we need to communitate with other ***Vnets*** that aren't inside that region one of the ways that we have is by using ***Peering***, this way allows other ***Vnets*** that are in other regions to communicate to resources alocated in neighboor ***Vnets***.
 
-![Peering](/Notes/Images/Peering1.svg)<br>
+![Peering](/Notes/Images/Peering1.svg)<br><br>
 
 Based on the image above let's assume that we have 3 ***Vnets*** in diferent regions and in one of that regions we have a virtual machine running some kind of service that we need to access from the other ***Vnet's***, one of the possible ways to do this is creating a peer between ***Vnet's*** as demonstrated in the above image. In this way the ***Vnet2*** and ***Vnet3*** can have the possibility to access the virtual machine in the ***Vnet1***.<br><br>
 This by default won't be enought to let the traffic pass from ***Vnet*** to ***Vnet***, to do so, we need to go into the ***Vnet*** that we want to peer and in the settings choose ***Peering***, this will open a new pane and we can now choose to create a new peering. When this option is selected we can check the box of "Allow '***VnetN***' to access the peered virtual network", this way we can now access the virtual machine from another ***Vnet***
