@@ -17,6 +17,8 @@ Inside the any subnet we always lose 5 IP adresses, as they are always used by t
 .2 DNS<br>
 .3 DNS<br>
 .255 Broadcast<br>
+![Traffic](/Notes/Images/Subnet.svg)<br>
+<br>
 
 (Image of Subetnet Ip losts due to configurations)
 
