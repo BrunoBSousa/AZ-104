@@ -7,16 +7,21 @@ A ***Vnet*** lives inside a subscription and a particular region, the ***Vnet***
 
 The ***Vnet*** can be broken in ***subnets*** inside the CIDR range that we gave to it, this subnet will carry the region and the subscription as they are the inheritance of the ***Vnet*** where the ***subnet*** lives.
 
-Image of a VNET/ subets
-
 Inside the any subnet we always lose 5 IP adresses, as they are always used by to define the following:
 **This example is based on a /24 CIDR**
 
 ![Subnet](/Notes/Images/Subnet1.svg)<br>
 <br>
 
-(Image of Subetnet Ip losts due to configurations)
-
 If we follow other CIDR based adresses it will be always the first four adresses and the last one of any network inside the CIDR that we are using. We should not forget that all the IP's here are ***Private** IP's, here we can't assign a DHCP, this will be facilitated by **Azure fabric**, what you can do is to static assign IP's to the resources, lets say in this case to a Network card.
 
 Public IP adresses will need to be explicited assigned in the creation of the resource, this is the only way that your resource will get a public IP's otherwise will always have a Private IP
+
+(image in azure where we can attibute the Public IP)
+
+Azure gives you the ability to bring your own Public IP's address space into Azure, you will need to validate that you own thta pulic IP, via a plentora of methods.
+
+As we talked above A ***Vnet*** can only live in one region, but if we need to communitate with other ***Vnets*** that aren't inside that region one of the ways that we have is by using ***Peering***, this way allows other ***Vnets*** that are in other regions to communicate to resources alocated in neighboor ***Vnets***.
+
+Let's assume that we have 3 ***Vnets*** in diferent regions and in one of that regions we have a gateway that allow us to talk to public space (Internet). We can create a peer between two or more Vnets that will then route the traffic to the Vnet that has a gateway exposed to the internet. But to do that we need to chose to do so. On the gateway we have to define that the gate way will ***"Allow gateway transit"*** and in the Vnet that want to communicate with the outside we need to choose ***"Remote Gateway"*** 
+
